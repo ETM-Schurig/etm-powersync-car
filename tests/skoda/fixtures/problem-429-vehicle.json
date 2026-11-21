@@ -1,0 +1,6 @@
+{
+  "type": "https://public.api.connect.skoda-auto.cz/problems/vehicle-not-accepting-requests",
+  "title": "Too Many Requests",
+  "status": 429,
+  "detail": "The car is busy, ask again later."
+}

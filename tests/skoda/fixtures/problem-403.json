@@ -1,0 +1,6 @@
+{
+  "type": "https://public.api.connect.skoda-auto.cz/problems/api-key-not-authorized",
+  "title": "Forbidden",
+  "status": 403,
+  "detail": "This key does not cover the requested car."
+}

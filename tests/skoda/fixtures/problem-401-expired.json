@@ -1,0 +1,6 @@
+{
+  "type": "https://public.api.connect.skoda-auto.cz/problems/api-key-expired",
+  "title": "Unauthorized",
+  "status": 401,
+  "detail": "Key lifetime over since 2026-10-15T00:00:00Z."
+}

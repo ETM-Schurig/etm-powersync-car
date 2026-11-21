@@ -1,0 +1,13 @@
+{
+  "vehicle": {
+    "vin": "ETM0SK0DA00000001",
+    "charging": {
+      "isVehicleInSavedLocation": false,
+      "status": {
+        "battery": {}
+      },
+      "carCapturedTimestamp": "2026-10-28T18:05:00Z"
+    }
+  },
+  "errors": []
+}

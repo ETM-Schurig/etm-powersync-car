@@ -1,0 +1,195 @@
+{
+    "name": "skoda",
+    "displayName": "Škoda",
+    "id": "fe9d0a01-438c-4ad7-8d51-dc5b3d286f96",
+    "vendors": [
+        {
+            "name": "skoda",
+            "displayName": "Škoda",
+            "id": "12290539-160e-4069-958e-cd03d569af69",
+            "thingClasses": [
+                {
+                    "id": "8796e50c-f0f4-4db7-a243-12bdf33115ab",
+                    "name": "vehicle",
+                    "displayName": "Škoda (API MyŠkoda)",
+                    "createMethods": ["User"],
+                    "setupMethod": "EnterPin",
+                    "interfaces": ["electricvehicle", "connectable"],
+                    "paramTypes": [
+                        {
+                            "id": "e87af318-df85-4429-8151-8d7d17d278bf",
+                            "name": "vin",
+                            "displayName": "VIN (17 caractères)",
+                            "type": "QString",
+                            "inputType": "TextLine",
+                            "defaultValue": ""
+                        }
+                    ],
+                    "actionTypes": [
+                        {
+                            "id": "10c1541e-920b-4c28-92c4-12e232e844f6",
+                            "name": "refresh",
+                            "displayName": "Relire maintenant",
+                            "paramTypes": []
+                        }
+                    ],
+                    "settingsTypes": [
+                        {
+                            "id": "1313af03-a5c8-4a6b-ac14-980dfd3711c6",
+                            "name": "pluggedIntervalMinutes",
+                            "displayName": "Intervalle de lecture, voiture branchée ou prise inconnue (5 à 120 min ; débranchée : aucune lecture périodique)",
+                            "type": "int",
+                            "unit": "Minutes",
+                            "minValue": 5,
+                            "maxValue": 120,
+                            "defaultValue": 30
+                        },
+                        {
+                            "id": "387d4a10-0644-4790-a146-d6ae3afe09f9",
+                            "name": "capacity",
+                            "displayName": "Capacité de la batterie (0 à 200 kWh, 0 = inconnue)",
+                            "type": "double",
+                            "unit": "KiloWattHour",
+                            "minValue": 0,
+                            "maxValue": 200,
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "1061d79b-ab8e-4308-ade8-341a0ba09b72",
+                            "name": "acPhaseCount",
+                            "displayName": "Phases AC de la recharge (1 à 3)",
+                            "type": "uint",
+                            "minValue": 1,
+                            "maxValue": 3,
+                            "defaultValue": 3
+                        }
+                    ],
+                    "stateTypes": [
+                        {
+                            "id": "df5dc3ac-6536-4a86-8793-861d721df1f3",
+                            "name": "connected",
+                            "displayName": "API joignable",
+                            "type": "bool",
+                            "defaultValue": false,
+                            "cached": false
+                        },
+                        {
+                            "id": "2396514b-916d-4f68-84d0-94a0436c61ba",
+                            "name": "batteryLevel",
+                            "displayName": "Niveau de batterie",
+                            "type": "int",
+                            "unit": "Percentage",
+                            "minValue": 0,
+                            "maxValue": 100,
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "859ccf19-df33-44f0-bfa2-6a9bd6ad0fdc",
+                            "name": "socKnown",
+                            "displayName": "Niveau de batterie connu (faux : batteryLevel = 0 ne vaut rien)",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+                        {
+                            "id": "4745d2e7-8b21-4edb-9606-01e469a42fdb",
+                            "name": "batteryCritical",
+                            "displayName": "Batterie critique",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+                        {
+                            "id": "88b03203-4698-4dd5-97c6-010e85c024dd",
+                            "name": "capacity",
+                            "displayName": "Capacité (0 = non renseignée)",
+                            "type": "double",
+                            "unit": "KiloWattHour",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "c81f1a1e-1049-4f1d-a1e7-753b8eca79f6",
+                            "name": "acPhaseCount",
+                            "displayName": "Phases AC (réglage)",
+                            "type": "uint",
+                            "minValue": 1,
+                            "maxValue": 3,
+                            "defaultValue": 3
+                        },
+                        {
+                            "id": "6d800bff-fbb1-431c-bb93-73b0f7850f2c",
+                            "name": "phaseCount",
+                            "displayName": "Nombre de phases (réglage)",
+                            "type": "uint",
+                            "minValue": 1,
+                            "maxValue": 3,
+                            "defaultValue": 3
+                        },
+                        {
+                            "id": "248f00b9-f88a-4595-9597-9160d62885dc",
+                            "name": "socTimestamp",
+                            "displayName": "Horodatage du niveau de batterie (0 = jamais lu)",
+                            "type": "int",
+                            "unit": "UnixTime",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "63c76e9b-015e-47bd-bd48-5d8da14441f5",
+                            "name": "socTimestampSource",
+                            "displayName": "Source de l'horodatage",
+                            "type": "QString",
+                            "possibleValues": ["vehicle", "reception", "unknown"],
+                            "defaultValue": "unknown"
+                        },
+                        {
+                            "id": "674b7148-61cc-4816-8bfb-d2396cf5453f",
+                            "name": "plugState",
+                            "displayName": "Câble",
+                            "type": "QString",
+                            "possibleValues": ["connected", "disconnected", "unknown"],
+                            "defaultValue": "unknown"
+                        },
+                        {
+                            "id": "cdfed904-5d61-4ab1-bcc2-94aaa9d2841b",
+                            "name": "apiKeyExpiresAt",
+                            "displayName": "Expiration de la clé API (0 = inconnue)",
+                            "type": "int",
+                            "unit": "UnixTime",
+                            "defaultValue": 0
+                        },
+                        {
+                            "id": "d571b812-e8ed-4ad6-9c25-08763e58823b",
+                            "name": "apiKeyExpiringSoon",
+                            "displayName": "Clé API bientôt expirée",
+                            "type": "bool",
+                            "defaultValue": false
+                        },
+                        {
+                            "id": "60a064ab-100b-4d70-9afc-940e12f0b74c",
+                            "name": "apiStatus",
+                            "displayName": "État de l'API",
+                            "type": "QString",
+                            "possibleValues": ["ok", "keyExpired", "keyInvalid", "keyNotAuthorized", "vehicleNotFound", "rateLimited", "vehicleNotAccepting", "serviceUnavailable", "vehicleUnavailable", "error", "unknown"],
+                            "defaultValue": "unknown",
+                            "cached": false
+                        },
+                        {
+                            "id": "72723cd3-496a-4442-ae71-0cffc666ec36",
+                            "name": "apiStatusMessage",
+                            "displayName": "Message",
+                            "type": "QString",
+                            "defaultValue": "",
+                            "cached": false
+                        },
+                        {
+                            "id": "a797c739-26be-4291-aeb4-ebdc47b1781c",
+                            "name": "rateLimitRemaining",
+                            "displayName": "Requêtes restantes (-1 = inconnu)",
+                            "type": "int",
+                            "defaultValue": -1,
+                            "cached": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

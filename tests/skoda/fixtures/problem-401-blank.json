@@ -1,0 +1,7 @@
+{
+  "type": "about:blank",
+  "title": "Unauthorized",
+  "status": 401,
+  "detail": "No usable API key in this request.",
+  "instance": "/api/v1/vehicles/ETM0SK0DA00000001"
+}

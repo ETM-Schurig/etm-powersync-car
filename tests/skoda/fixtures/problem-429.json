@@ -1,0 +1,6 @@
+{
+  "type": "https://public.api.connect.skoda-auto.cz/problems/rate-limit-exceeded",
+  "title": "Too Many Requests",
+  "status": 429,
+  "detail": "Quota used up for this key; come back later."
+}

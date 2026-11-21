@@ -1,0 +1,36 @@
+{
+  "vehicle": {
+    "vin": "ETM0SK0DA00000001",
+    "charging": {
+      "isVehicleInSavedLocation": true,
+      "status": {
+        "chargingRateInKilometersPerHour": 31.5,
+        "chargePowerInKw": 7.4,
+        "remainingTimeToFullyChargedInMinutes": 140,
+        "state": "READY_FOR_CHARGING",
+        "chargeType": "AC",
+        "plugConnectionState": "CONNECTED",
+        "plugLockState": "LOCKED",
+        "battery": {
+          "remainingCruisingRangeInMeters": 286500,
+          "stateOfChargeInPercent": 58
+        }
+      },
+      "settings": {
+        "targetStateOfChargeInPercent": 90,
+        "batteryCareModeTargetValueInPercent": 85,
+        "preferredChargeMode": "TIMER",
+        "availableChargeModes": [
+          "MANUAL",
+          "TIMER"
+        ],
+        "chargingCareMode": "DEACTIVATED",
+        "autoUnlockPlugWhenCharged": "OFF",
+        "maxChargeCurrentAc": "REDUCED",
+        "maxChargeCurrentAcAmpere": 13
+      },
+      "carCapturedTimestamp": "2026-10-28T17:42:00Z"
+    }
+  },
+  "errors": []
+}

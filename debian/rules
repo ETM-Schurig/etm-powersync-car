@@ -1,0 +1,34 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+export QT_QPA_PLATFORM=minimal
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+PREPROCESS_FILES := $(wildcard debian/*.in)
+
+$(PREPROCESS_FILES:.in=): %: %.in
+	sed 's,/@DEB_HOST_MULTIARCH@,$(DEB_HOST_MULTIARCH:%=/%),g' $< > $@
+
+override_dh_install: $(PREPROCESS_FILES:.in=)
+	dh_install
+
+# With a single binary package, dh_auto_install would install straight into
+# debian/powersync-plugin-skoda/ and the .install file would find nothing.
+# Install into debian/tmp, so each brand's package picks its files by .install.
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/tmp
+
+# The tests are not part of the package: the root project builds them only
+# with CONFIG+=build_tests (see README.md), run outside the package build.
+override_dh_auto_test:
+
+override_dh_auto_clean:
+	dh_auto_clean
+	find -name *plugininfo.h -exec rm {} \;
+	find -name *.qm -exec rm {} \;
+	rm -rf $(PREPROCESS_FILES:.in=)
+
+%:
+	dh $@ --buildsystem=qmake6 --parallel

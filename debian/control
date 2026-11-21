@@ -1,0 +1,25 @@
+Source: etm-powersync-car
+Section: utils
+Priority: optional
+Maintainer: ETM-Schurig SARL <contact@etm-schurig.eu>
+Standards-Version: 4.7.2
+Homepage: https://etm-powersync.fr
+Build-depends: debhelper,
+               pkg-config,
+               libnymea-dev (>= 1.15.2),
+               nymea-dev-tools:native,
+               qt6-base-dev,
+               qt6-base-dev-tools,
+
+
+Package: powersync-plugin-skoda
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Description: PowerSync integration plugin for Škoda electric vehicles
+ This package contains the nymea integration plugin that reads the charging
+ state of a Škoda electric vehicle (state of charge, plug state, charging
+ state) from the MyŠkoda public API, for use by the ETM PowerSync home energy
+ management system. Read-only: the plugin sends no command to the vehicle.
+ Each user enters the API key created in the MyŠkoda app for their vehicle.

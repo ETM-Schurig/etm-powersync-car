@@ -1,0 +1,15 @@
+{
+  "vehicle": {
+    "vin": "ETM0SK0DA00000001",
+    "charging": {
+      "isVehicleInSavedLocation": false,
+      "status": {
+        "state": "CONNECT_CABLE",
+        "plugConnectionState": "DISCONNECTED",
+        "battery": {
+          "stateOfChargeInPercent": 47
+        }
+      }
+    }
+  }
+}

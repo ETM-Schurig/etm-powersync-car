@@ -1,0 +1,11 @@
+{
+  "vehicle": {
+    "vin": "ETM0SK0DA00000001"
+  },
+  "errors": [
+    {
+      "type": "CHARGING_UNAVAILABLE",
+      "description": "No charging data from the car at the last contact."
+    }
+  ]
+}

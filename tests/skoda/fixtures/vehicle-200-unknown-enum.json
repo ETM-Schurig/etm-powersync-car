@@ -1,0 +1,19 @@
+{
+  "vehicle": {
+    "vin": "ETM0SK0DA00000001",
+    "charging": {
+      "isVehicleInSavedLocation": true,
+      "status": {
+        "state": "SOME_NEW_STATE",
+        "plugConnectionState": "SOME_NEW_PLUG_STATE",
+        "plugLockState": "LOCKED",
+        "battery": {
+          "remainingCruisingRangeInMeters": 286500,
+          "stateOfChargeInPercent": 58
+        }
+      },
+      "carCapturedTimestamp": "2026-10-28T17:42:00Z"
+    }
+  },
+  "errors": []
+}

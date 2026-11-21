@@ -1,0 +1,83 @@
+etm-powersync-car (0.1.8) trixie; urgency=medium
+
+  * powersync-plugin-skoda: AC phase count of the vehicle as a thing
+    setting (acPhaseCount, 1 to 3, default 3), published as the states
+    phaseCount (read by the energy manager) and acPhaseCount, at setup and
+    on each change; it survives a reconfiguration through the pairing
+    dialog like the other settings. The API does not give it.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Wed, 11 Nov 2026 19:30:00 +0100
+
+etm-powersync-car (0.1.7) trixie; urgency=medium
+
+  * powersync-plugin-skoda: the settings (reading interval, battery
+    capacity) survive a reconfiguration through the pairing dialog again;
+    the defaults nymea puts back during the setup are no longer stored
+    over the values kept by the plugin.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 14:20:00 +0100
+
+etm-powersync-car (0.1.6) trixie; urgency=medium
+
+  * powersync-plugin-skoda: battery capacity setting 0-200 kWh without a
+    gap, checked by nymea alone (0 = unknown); the plugin no longer refuses
+    small values nor puts a value back.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 12:42:37 +0100
+
+etm-powersync-car (0.1.5) trixie; urgency=medium
+
+  * powersync-plugin-skoda: the battery capacity becomes a thing setting
+    (0 = unknown, else 10-200 kWh), changed at once without a request; its
+    value is taken over from the former param on the first start. The
+    settings survive a reconfiguration through the pairing dialog. A failed
+    reading is still retried while unplugged (documented).
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 12:27:01 +0100
+
+etm-powersync-car (0.1.4) trixie; urgency=medium
+
+  * powersync-plugin-skoda: no periodic reading while the vehicle is
+    unplugged. The reading interval while plugged in (5-120 min, default
+    30) becomes a thing setting, changed at once without a request. New
+    action "Relire maintenant" (refresh). The pairing validation answer is
+    the first reading: a pairing costs 1 request.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 12:16:18 +0100
+
+etm-powersync-car (0.1.3) trixie; urgency=medium
+
+  * powersync-plugin-skoda: reads every 30 min when plugged in or when the
+    plug state is unknown, every 60 min when unplugged (thing params,
+    5-120 and 15-240 min). Never less than 5 min between two requests,
+    across restarts and reconfigurations too.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 11:45:52 +0100
+
+etm-powersync-car (0.1.2) trixie; urgency=medium
+
+  * powersync-plugin-skoda: publishes the state of charge, the plug state
+    and the API status only. The states targetSoc, targetSocSource,
+    batteryCareMode, rangeKm, plugLockState, vehicleChargingState and
+    vehicleChargingStateRaw are removed, and the matching API fields are no
+    longer read. Charge limits are a setting of the energy manager.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 11:23:16 +0100
+
+etm-powersync-car (0.1.1) trixie; urgency=medium
+
+  * powersync-plugin-skoda: targetSoc is now the effective charge target:
+    the battery care target while the battery care mode is activated, the
+    charge limit otherwise. New states targetSocSource and batteryCareMode.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 11:08:51 +0100
+
+etm-powersync-car (0.1.0) trixie; urgency=medium
+
+  * powersync-plugin-skoda: first version. Reads the charging part of the
+    MyŠkoda public API (contract 1.1.0): state of charge with its timestamp
+    and source, plug and lock state, charging state, charge limit, range,
+    API key expiry and quota. Read-only, one domain, HTTPS only. Built
+    against nymea 1.15.2.
+
+ -- ETM-Schurig SARL <contact@etm-schurig.eu>  Mon, 02 Nov 2026 07:53:51 +0100

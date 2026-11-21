@@ -1,0 +1,21 @@
+build/
+*.o
+*.so
+Makefile
+.qmake.stash
+moc_*
+moc_predefs.h
+plugininfo.h
+extern-plugininfo.h
+*.qm
+debian/.debhelper/
+debian/files
+debian/*.substvars
+debian/*/
+!debian/source/
+debian/debhelper-build-stamp
+debian/*.debhelper.log
+
+# Contract of the MyŠkoda API: belongs to Škoda, not redistributed (docs/skoda/README.md)
+docs/skoda/openapi-*.yaml
+docs/skoda/openapi-*.json
